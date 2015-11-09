@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="keywords" content="лучший, фильмы, музыка, игры, программы, скачать, онлайн, торрент, бесплатно, умный, поиск"/>
+    <meta name="keywords" content="" />
 	<link rel="icon" type="image/png" href="http://www.qwedl.com/data/images/icon.png" />
 	<title>AppHub</title>
 </head>
@@ -11,11 +11,32 @@
 	<div class="include" data-type="header"></div>
 	<div id="grid-cont">
 		<section class="grid_outer chapter">
-            <nav class="float-button">
-                <button class="material-icons" id="home">home</button>
-            </nav>
-            <div id="res"></div>
-            <div id="pagination"></div>
+			<iframe name="post"></iframe>
+			<form class="card" method="get" target="post" action="../cgi-bin/save.sh">
+				<nav id="save" class="float-nav closed"><button class="toggle dialog material-icons" id="save">save</button></nav>
+				<div class="hr"><p>
+					<label class="switch">
+						<input type="checkbox" name="onoff" id="onoff" class="switch" onclick="swi(this.id)" value="1">
+						<span></span>
+						Точка доступа wifi
+					</label>
+				</p></div>
+				<div class="list hr">
+					<label for="ssid">Название точки доступа</label>
+					<input class="label" type="text" name="ssid" id="ssid">
+				</div>
+				<div class="hr"><p>
+					<label class="switch">
+						<input type="checkbox" name="wpa" id="wpa" class="switch" onclick="swi(this.id)" value="1">
+						<span></span>
+						Пароль
+					</label>
+				</p></div>
+				<div class="list hr">
+					<label for="wpa_passphrase">Пароль</label>
+					<input class="label" type="text" name="wpa_passphrase" id="wpa_passphrase">
+				</div>
+			</div>
 		</section>
 	</div>
     <script>
@@ -23,6 +44,14 @@
     </script>
 	<script src="http://www.qwedl.com/data/gad/gad.js"></script>
 	<script async src="index.js"></script>
+<style>
+div.list.hr label {
+	font-weight: normal;
+}
+div.list.hr input.label {
+	width: 100%;
+}
+</style>
 </body>
 </html>
 
