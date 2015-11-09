@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="qp-ui" data-qp-ui="{'Futurizr': {'hasTouch': 'touch'}}" lang="ru" style="display:none;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="лучший, фильмы, музыка, игры, программы, скачать, онлайн, торрент, бесплатно, умный, поиск"/>
+	<link rel="icon" type="image/png" href="http://www.qwedl.com/data/images/icon.png" />
+	<title>Авторизация - AppHub</title>
+</head>
+<body data-color="009688/FF4081">
+	<div class="include" data-type="header"></div>
+	<div id="grid-cont">
+		<section class="grid_outer chapter">
+			<form class="card" id="card" style="-webkit-user-select: none;" onsubmit="return false;">
+				<p>
+					<input type="text" class="title" style="margin-left:10%;width:90%" lang-id="login" lang-replace="placeholder" placeholder="Логин" name="login" id="login" required="">
+					<i class="material-icons" style="margin-top:-33px;">face</i>
+				</p>
+				<p>
+					<input type="password" class="title" style="margin-left:10%;width:90%" lang-id="password" lang-replace="placeholder" placeholder="Пароль" name="password" id="password" required="">
+					<i class="material-icons" style="margin-top:-33px;">lock_outline</i>
+					<i class="material-icons" id="password_show" onclick="password_show()" style="margin-top:-33px;margin-left:90%;position:relative;">visibility_off</i>
+				</p>
+				<p><button class="ok" onclick="auth()">Ok</button></p>
+		</form>
+		</section>
+	</div>
+    <script>
+        root = 'http://www.qwedl.com/';
+    </script>
+	<script src="http://www.qwedl.com/data/gad/gad.js"></script>
+	<script async src="login.js"></script>
+</body>
+</html>
+
