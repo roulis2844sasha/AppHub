@@ -1,18 +1,14 @@
 if [ $1 == 'start' ]; then
 
 
-echo 'Интерфейс wifi'
-read wifi
-echo 'Интерфейс с интернетом'
-read lan
 echo 'Название точки'
 read ssid
 echo 'Пароль точки'
 read pass
 echo "bind-interfaces
-interface=$wifi
+interface=$iwifi
 dhcp-range=192.168.10.2,192.168.10.5" > /etc/dnsmasq.conf
-echo "interface=$wifi
+echo "interface=$iwifi
 driver=nl80211
 ssid=$ssid
 hw_mode=g
@@ -23,14 +19,14 @@ echo "#dns=dnsmasq" >> /etc/NetworkManager/NetworkManager.conf
 restart network-manager
 
 
-    ifconfig $wifi 192.168.10.1
+    ifconfig $iwifi 192.168.10.1
     service dnsmasq restart
     sysctl net.ipv4.ip_forward=1
-    iptables -t nat -A POSTROUTING -o $lan -j MASQUERADE
+    iptables -t nat -A POSTROUTING -o $ilan -j MASQUERADE
     hostapd /etc/hostapd.conf
 fi
 if [ $1 == 'stop' ]; then
-    iptables -D POSTROUTING -t nat -o $lan -j MASQUERADE
+    iptables -D POSTROUTING -t nat -o $ilan -j MASQUERADE
     sysctl net.ipv4.ip_forward=0
     service dnsmasq stop
     service hostapd stop
