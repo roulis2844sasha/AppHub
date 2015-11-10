@@ -1,3 +1,2 @@
 #!/bin/bash
-dir=`pwd`
-busybox httpd -p 8080 -f -v -h "$dir/"
+busybox httpd -p 8080 -f -v -h $(cd $(dirname $0) && pwd)"/"
